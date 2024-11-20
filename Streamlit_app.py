@@ -62,3 +62,21 @@ if uploaded_file is not None:
 
     # Afficher les résultats
     st.image(annotated_image, caption=f"Result: {name}", use_column_width=True)
+
+# Interface Streamlit
+st.title("Face Recognition App")
+st.write("Capture a photo using your camera for real-time face recognition!")
+
+# Capture vidéo en temps réel avec la caméra
+camera_input = st.camera_input("Take a picture")
+
+if camera_input is not None:
+    # Convertir l'image capturée en un tableau NumPy
+    image = Image.open(camera_input)
+    image = np.array(image)
+
+    # Reconnaissance faciale
+    name, annotated_image = recognize_face(image)
+
+    # Afficher l'image annotée avec les résultats
+    st.image(annotated_image, caption=f"Result: {name}", use_column_width=True)
