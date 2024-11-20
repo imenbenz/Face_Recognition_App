@@ -1,5 +1,5 @@
 streamlit==1.32.0
-opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
 keras-facenet==0.3.2
 joblib==1.4.2
 numpy==1.26.4
